@@ -1,0 +1,61 @@
+<div class="form-container">
+  <h2>User Registration Form</h2>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <!-- Name -->
+    <label>Name:</label>
+    <input type="text" formControlName="name" />
+    <div class="error" *ngIf="f['name'].touched && f['name'].invalid">
+      <small *ngIf="f['name'].errors?.['required']">Name is required.</small>
+      <small *ngIf="f['name'].errors?.['minlength']">
+        Name must be at least 3 characters.
+      </small>
+    </div>
+
+    <!-- Email -->
+    <label>Email:</label>
+    <input type="email" formControlName="email" />
+    <div class="error" *ngIf="f['email'].touched && f['email'].invalid">
+      <small *ngIf="f['email'].errors?.['required']">Email is required.</small>
+      <small *ngIf="f['email'].errors?.['email']">Enter a valid email.</small>
+    </div>
+
+    <!-- Age -->
+    <label>Age:</label>
+    <input type="number" formControlName="age" />
+    <div class="error" *ngIf="f['age'].touched && f['age'].invalid">
+      <small *ngIf="f['age'].errors?.['required']">Age is required.</small>
+      <small *ngIf="f['age'].errors?.['min']">Minimum age is 18.</small>
+      <small *ngIf="f['age'].errors?.['max']">Maximum age is 60.</small>
+    </div>
+
+    <!-- Gender -->
+    <label>Gender:</label>
+    <div>
+      <input type="radio" formControlName="gender" value="male" /> Male
+      <input type="radio" formControlName="gender" value="female" /> Female
+    </div>
+
+    <!-- Address Group -->
+    <div formGroupName="address">
+      <label>City:</label>
+      <input type="text" formControlName="city" />
+      <label>State:</label>
+      <input type="text" formControlName="state" />
+    </div>
+
+    <!-- Terms -->
+    <label>
+      <input type="checkbox" formControlName="terms" /> I accept the terms
+    </label>
+    <div class="error" *ngIf="f['terms'].touched && f['terms'].invalid">
+      <small>You must accept the terms.</small>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="userForm.invalid">Submit</button>
+  </form>
+
+  <!-- Display form values live -->
+  <!-- <pre>{{ userForm.value | json }}</pre> -->
+</div>
