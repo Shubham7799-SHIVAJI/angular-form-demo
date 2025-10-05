@@ -1,0 +1,112 @@
+
+/* Jungle Theme Colors */
+:root {
+  --jungle-green: #2e7d32;   /* dark leafy green */
+  --jungle-light: #4caf50;   /* light green accent */
+  --jungle-bg: #e8f5e9;      /* pale jungle background */
+  --jungle-dark: #1b5e20;    /* deep forest green */
+  --jungle-error: #d32f2f;   /* error red */
+}
+
+.employee-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--jungle-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 100, 0, 0.2);
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--jungle-dark);
+}
+
+h2 {
+  text-align: center;
+  color: var(--jungle-green);
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 50, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  color: var(--jungle-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.6rem;
+  border: 1px solid var(--jungle-green);
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+  background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--jungle-light);
+  box-shadow: 0 0 5px var(--jungle-light);
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Error messages */
+.error {
+  color: var(--jungle-error);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"] {
+  background: var(--jungle-green);
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background: var(--jungle-dark);
+}
+
+button[type="button"] {
+  background: #ccc;
+  color: #333;
+}
+
+button[type="button"]:hover {
+  background: #aaa;
+}
+
+/* Profile Picture Preview */
+.form-group img {
+  margin-top: 0.5rem;
+  border: 2px solid var(--jungle-green);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 50, 0, 0.2);
+}

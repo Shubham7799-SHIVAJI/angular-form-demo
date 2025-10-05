@@ -1,0 +1,133 @@
+<h2>{{ isEdit() ? 'Edit Employee' : 'Add Employee' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="employee-form">
+
+  <!-- First Name -->
+  <div class="form-group">
+    <label for="firstName">First Name *</label>
+    <input id="firstName" type="text" formControlName="firstName" />
+    <div class="error" *ngIf="form.get('firstName')?.invalid && form.get('firstName')?.touched">
+      First name is required
+    </div>
+  </div>
+
+  <!-- Last Name -->
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input id="lastName" type="text" formControlName="lastName" />
+  </div>
+
+  <!-- Email -->
+  <div class="form-group">
+    <label for="email">Email *</label>
+    <input id="email" type="email" formControlName="email" />
+    <div class="error" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+      Enter a valid email
+    </div>
+  </div>
+
+  <!-- Phone -->
+  <div class="form-group">
+    <label for="phone">Phone</label>
+    <input id="phone" type="tel" formControlName="phone" />
+  </div>
+
+  <!-- Age -->
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input id="age" type="number" formControlName="age" />
+  </div>
+
+  <!-- Salary -->
+  <div class="form-group">
+    <label for="salary">Salary</label>
+    <input id="salary" type="number" formControlName="salary" />
+  </div>
+
+  <!-- Date of Birth -->
+  <div class="form-group">
+    <label for="dob">Date of Birth</label>
+    <input id="dob" type="date" formControlName="dob" />
+  </div>
+
+  <!-- Hire Date -->
+  <div class="form-group">
+    <label for="hireDate">Hire Date</label>
+    <input id="hireDate" type="date" formControlName="hireDate" />
+  </div>
+
+  <!-- Favorite Color -->
+  <div class="form-group">
+    <label for="favoriteColor">Favorite Color</label>
+    <input id="favoriteColor" type="color" formControlName="favoriteColor" />
+  </div>
+
+  <!-- Gender (Radio buttons) -->
+  <div class="form-group">
+    <label>Gender</label>
+    <div>
+      <label><input type="radio" value="male" formControlName="gender" /> Male</label>
+      <label><input type="radio" value="female" formControlName="gender" /> Female</label>
+      <label><input type="radio" value="other" formControlName="gender" /> Other</label>
+    </div>
+  </div>
+
+  <!-- Department (Dropdown) -->
+  <div class="form-group">
+    <label for="department">Department</label>
+    <select id="department" formControlName="department">
+      <option value="">-- Select Department --</option>
+      <option value="HR">HR</option>
+      <option value="IT">IT</option>
+      <option value="Finance">Finance</option>
+      <option value="Sales">Sales</option>
+    </select>
+  </div>
+
+  <!-- Skills (Checkboxes) -->
+  <div class="form-group">
+    <label>Skills</label>
+    <div>
+     <label> <input type="checkbox" (change)="onSkillToggle('Angular', $event)" [checked]="hasSkill('Angular')" /> Angular</label>
+<label> <input type="checkbox" (change)="onSkillToggle('React', $event)" [checked]="hasSkill('React')" /> React</label>
+<label> <input type="checkbox" (change)="onSkillToggle('NodeJS', $event)" [checked]="hasSkill('NodeJS')" /> NodeJS</label>
+<label> <input type="checkbox" (change)="onSkillToggle('Java', $event)" [checked]="hasSkill('Java')" /> Java</label>
+
+    </div>
+  </div>
+
+  <!-- Bio (Textarea) -->
+  <div class="form-group">
+    <label for="bio">Bio</label>
+    <textarea id="bio" formControlName="bio"></textarea>
+  </div>
+
+  <!-- Profile Picture (File Upload) -->
+  <!-- <div class="form-group">
+    <label for="profilePicture">Profile Picture</label>
+    <input id="profilePicture" type="file" (change)="onFileChange($event)" />
+    <div *ngIf="form.value.profilePicture">
+      <img [src]="form.value.profilePicture" alt="Preview" width="80" />
+    </div>
+  </div> -->
+
+  <!-- Active (Checkbox) -->
+  <div class="form-group">
+    <label>
+      <input type="checkbox" formControlName="isActive" />
+      Active
+    </label>
+  </div>
+
+  <!-- Website -->
+  <div class="form-group">
+    <label for="website">Website</label>
+    <input id="website" type="url" formControlName="website" />
+  </div>
+
+  <!-- Buttons -->
+  <div class="form-actions">
+    <button type="submit" [disabled]="form.invalid">Save</button>
+    <button type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>

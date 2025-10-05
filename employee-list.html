@@ -1,0 +1,46 @@
+<div class="employee-list">
+  <h2>Employee Dashboard</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Age</th>
+        <th>Salary</th>
+        <th>Department</th>
+        <th>Skills</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.firstName }} {{ emp.lastName }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.phone || '-' }}</td>
+        <td>{{ emp.age || '-' }}</td>
+        <td>{{ emp.salary || '-' }}</td>
+        <td>{{ emp.department || '-' }}</td>
+        <td>
+          <span *ngFor="let skill of emp.skills; let i = index">
+            {{ skill }}<span *ngIf="i < emp.skills.length - 1">, </span>
+          </span>
+        </td>
+        <td>{{ emp.isActive ? 'Active' : 'Inactive' }}</td>
+        <td>
+          <button (click)="editEmployee(emp.id)">✏️ Edit</button>
+          <!-- <button (click)="deleteEmployee(emp.id)">🗑️ Delete</button> -->
+        </td>
+      </tr>
+
+      <!-- Show message if no employees -->
+      <tr *ngIf="employees.length === 0">
+        <td colspan="10" style="text-align:center;">No employees found.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,94 @@
+/* Dark Jungle Theme Colors */
+:root {
+  --jungle-dark-bg: #0b2f1a;       /* very dark jungle background */
+  --jungle-green: #2e7d32;         /* dark leafy green */
+  --jungle-light: #66bb6a;         /* light green accent */
+  --jungle-text: #e0f2f1;          /* light text for contrast */
+  --jungle-border: #388e3c;        /* dark green borders */
+  --jungle-error: #f44336;         /* error red */
+  --jungle-shadow: rgba(0, 0, 0, 0.7);
+  --jungle-hover: #1b5e20;         /* hover background for buttons */
+}
+
+.employee-list {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--jungle-dark-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--jungle-shadow);
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--jungle-text);
+}
+
+h2 {
+  text-align: center;
+  color: var(--jungle-light);
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--jungle-text);
+}
+
+thead {
+  background: var(--jungle-green);
+  color: var(--jungle-text);
+}
+
+thead th {
+  padding: 0.8rem;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid var(--jungle-light);
+}
+
+tbody td {
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--jungle-border);
+}
+
+tbody tr:hover {
+  background: rgba(102, 187, 106, 0.2); /* subtle green highlight on hover */
+}
+
+/* Buttons */
+button {
+  padding: 0.4rem 0.8rem;
+  margin: 0 2px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: var(--jungle-text);
+}
+
+button[type="button"] {
+  background: var(--jungle-green);
+}
+
+button[type="button"]:hover {
+  background: var(--jungle-hover);
+}
+
+button[type="submit"] {
+  background: var(--jungle-light);
+  color: #000;
+}
+
+button[type="submit"]:hover {
+  background: #4caf50;
+  color: #fff;
+}
+
+/* No employees message */
+tbody tr td[colspan] {
+  text-align: center;
+  color: var(--jungle-text);
+  font-style: italic;
+}

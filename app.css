@@ -1,0 +1,82 @@
+/* Jungle Theme Colors */
+:root {
+  --jungle-green: #2e7d32;    /* dark leafy green */
+  --jungle-light: #4caf50;    /* light green accent */
+  --jungle-bg: #e8f5e9;       /* pale jungle background */
+  --jungle-dark: #1b5e20;     /* deep forest green */
+  --jungle-accent: #a5d6a7;   /* soft green */
+  --text-dark: #1b5e20;
+}
+
+/* Header */
+header {
+  background-color: var(--jungle-green);
+  color: #bd0d0d;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 3px solid var(--jungle-dark);
+  border-radius: 0 0 12px 12px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 50, 0, 0.4);
+}
+
+/* Navigation */
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: var(--jungle-light);
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+nav a.active-link {
+  text-decoration: underline;
+  color: #549918;
+}
+
+/* Main content */
+main {
+  padding: 2rem;
+  min-height: 70vh;
+  background-color: var(--jungle-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 50, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--jungle-dark);
+  color: #ce9595;
+  margin-top: 1rem;
+  border-radius: 12px 12px 0 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -3px 10px rgba(0, 50, 0, 0.2);
+}
+
+/* Links hover */
+nav a:hover {
+  color: var(--jungle-accent);
+  transition: 0.3s;
+}
+
+/* Buttons inside app (optional global style) */
+button {
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.9;
+}
